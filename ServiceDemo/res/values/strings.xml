@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="btn_start">Start</string>
     <string name="btn_stop">Stop</string>
+    <string name="btn_bind">Bind</string>
+    <string name="btn_unbind">Unbind</string>
 
 </resources>

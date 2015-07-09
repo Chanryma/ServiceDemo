@@ -2,6 +2,7 @@ package com.chanryma.servicedemo.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -11,7 +12,7 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.i(TAG, "Service onBind");
-        return null;
+        return new MyBinder();
     }
 
     @Override
@@ -48,5 +49,11 @@ public class MyService extends Service {
     public void onRebind(Intent intent) {
         Log.i(TAG, "Service onRebind");
         super.onRebind(intent);
+    }
+
+    public class MyBinder extends Binder {
+        public MyService getService() {
+            return MyService.this;
+        }
     }
 }
